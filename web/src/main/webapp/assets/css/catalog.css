@@ -1,0 +1,110 @@
+#searchBar {
+    margin-top: 5%;
+}
+
+li {
+    list-style: none;
+}
+
+.navy {
+    margin-top: 5%;
+    /*width: 18%;*/
+    position: fixed;
+    border-radius: 0px 10px 10px 0px;
+    margin-left: -3px;
+    /*background-color: #ebebeb;*/
+    box-shadow: 1px 1px 10px black;
+    font-size: 17px;
+}
+
+.ad {
+    width: 78%;
+    height: 250px;
+    float: right;
+    margin: 3% 2% -1% 2%;
+}
+
+.img {
+    margin: 2.5% 2% 2% 2.5%;
+    width: 214px;
+    height: 194px;
+    float: left;
+    box-shadow: 1px 1px 10px black;
+}
+
+.description {
+    width: 44%;
+    float: left;
+    padding-top: 4.35%;
+    font-size: 18px;
+}
+
+.buy {
+    float: right;
+    margin-top: 10%;
+    margin-right: 2%;
+    height: 43px;
+}
+
+
+.price {
+    width: 150px;
+    float: left;
+    margin-top: 10%;
+    font-size: 16px;
+}
+
+.sale {
+    color: red;
+    font-size: 24px;
+}
+
+.newPrice {
+    font-size: 17px;
+    font-weight: 700;
+    margin-top: -22px;
+}
+
+.oldPrice {
+    font-size: 14px;
+}
+
+.pagination {
+    margin-left: 41%;
+}
+
+.list-group {
+    margin-bottom: 0px;
+}
+
+#sale {
+    color: red;
+}
+
+.buy-panel {
+    width: 21%;
+    padding-left: 15px;
+}
+
+.buy-panel:hover {
+    background-color: white;
+}
+
+#hint {
+    color: red;
+}
+
+#dialog {
+    position: fixed;
+    width: 400px;
+    height: 100px;
+    background-color: lightgray;
+    margin-left: 35%;
+    margin-top: 6%;
+    font-size: 29px;
+    border-radius: 28px;
+    text-align: center;
+    line-height: 92px;
+    box-shadow: 1px 1px 10px black;
+    opacity: 0.95;
+}

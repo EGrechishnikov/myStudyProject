@@ -1,0 +1,19 @@
+.jumbotron {
+    background-image: url(../img/back.jpg);
+    color: black;
+    font-family: "Gill Sans", Futura;
+}
+.jumbotron p {
+    margin-top: 45px;
+    font-size: 180%;
+    font-style: italic;
+    font-weight: 400;
+}
+.align {
+    text-align: center;
+}
+
+#catalog {
+    background-color: white;
+    color: #e5e5e5;
+}

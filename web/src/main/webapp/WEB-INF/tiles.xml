@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+    <definition name="default" template="/WEB-INF/layout/default.jsp">
+        <put-attribute name="header" value="/WEB-INF/common/header.jsp"/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="meta" value=""/>
+    </definition>
+    
+    <definition name="index" extends="default">
+        <put-attribute name="body" value="/WEB-INF/jsp/index.jsp"/>
+        <put-attribute name="meta" value="/WEB-INF/meta/indexMeta.jsp"/>
+    </definition>
+
+    <definition name="contacts" extends="default">
+        <put-attribute name="body" value="/WEB-INF/jsp/contacts.jsp"/>
+    </definition>
+
+    <definition name="login" extends="default">
+        <put-attribute name="body" value="/WEB-INF/jsp/login.jsp"/>
+        <put-attribute name="meta" value="/WEB-INF/meta/loginMeta.jsp"/>
+    </definition>
+
+    <definition name="catalog" extends="default">
+        <put-attribute name="body" value="/WEB-INF/jsp/catalog.jsp"/>
+        <put-attribute name="meta" value="/WEB-INF/meta/catalogMeta.jsp"/>
+    </definition>
+
+    <definition name="sale" extends="default">
+        <put-attribute name="body" value="/WEB-INF/jsp/sale.jsp"/>
+        <put-attribute name="meta" value="/WEB-INF/meta/saleMeta.jsp"/>
+    </definition>
+
+    <definition name="search" extends="default">
+        <put-attribute name="body" value="/WEB-INF/jsp/search.jsp"/>
+        <put-attribute name="meta" value="/WEB-INF/meta/searchMeta.jsp"/>
+    </definition>
+
+    <definition name="signup" extends="default">
+        <put-attribute name="body" value="/WEB-INF/jsp/signup.jsp"/>
+        <put-attribute name="meta" value="/WEB-INF/meta/signupMeta.jsp"/>
+    </definition>
+
+    <definition name="myPage" extends="default">
+        <put-attribute name="body" value="/WEB-INF/jsp/myPage.jsp"/>
+        <put-attribute name="meta" value="/WEB-INF/meta/myPageMeta.jsp"/>
+    </definition>
+
+    <definition name="order" extends="default">
+        <put-attribute name="body" value="/WEB-INF/jsp/order.jsp"/>
+        <put-attribute name="meta" value="/WEB-INF/meta/orderMeta.jsp"/>
+    </definition>
+
+    <definition name="editProfile" extends="default">
+        <put-attribute name="body" value="/WEB-INF/jsp/editProfile.jsp"/>
+        <put-attribute name="meta" value="/WEB-INF/meta/editProfileMeta.jsp"/>
+    </definition>
+
+    <definition name="error" extends="default">
+        <put-attribute name="body" value="/WEB-INF/jsp/error.jsp"/>
+        <put-attribute name="meta" value="/WEB-INF/meta/errorMeta.jsp"/>
+    </definition>
+</tiles-definitions>

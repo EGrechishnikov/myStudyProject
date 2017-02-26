@@ -1,0 +1,52 @@
+body {
+    background-image: url(../img/back.jpg);
+}
+
+#first {
+    margin-top: 120px;
+    margin-bottom: 20px;
+}
+
+#Login, #Password {
+    width: 400px;
+    height: 50px;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+legend {
+    font-size: 45px;
+}
+
+h1 {
+    margin-top: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 70px;
+    color: #2b669a;
+    font-family: "Gill Sans", Futura sans-serif;
+}
+
+#b {
+    text-align: center;
+}
+
+#b1 {
+    width: 130px;
+    height: 50px;
+    font-size: 24px;
+    border-radius: 8px;
+}
+
+footer {
+    position: fixed;
+    margin-top: 6%;
+    margin-left: 567px;
+}
+
+.text-danger {
+    height: 35px;
+    font-size: 17px;
+    text-align: center;
+}
