@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Service for role. Singleton.
+ * Service for role.
  */
 @Service("roleService")
 @Transactional

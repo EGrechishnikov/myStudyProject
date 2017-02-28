@@ -12,6 +12,9 @@ import service.interfaces.GoodsServiceInterface;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Catalog controller.
+ */
 @Controller
 public class CatalogController {
     @Autowired
@@ -19,6 +22,12 @@ public class CatalogController {
     //Amount of goods per page
     static final int amount = Integer.parseInt(ResourceBundle.getBundle("config").getString("goodsPerPage"));
 
+    /**
+     * Get all goods and add them in Model to show in jsp.
+     * @param index - page's index
+     * @param country - country name
+     * @return - link
+     */
     @RequestMapping(value = "/catalog")
     public String catalogPage(@RequestParam(value = "page", required = false) String index,
                               @RequestParam(value = "country", required = false, defaultValue = "") String country,

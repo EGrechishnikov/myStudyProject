@@ -14,6 +14,9 @@ import service.interfaces.OrdersServiceInterface;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+/**
+ * Command controller
+ */
 @Controller
 public class CommandController {
     @Autowired
@@ -22,6 +25,10 @@ public class CommandController {
     private GoodsServiceInterface goodsService;
     private static Logger logger = Logger.getLogger(CommandController.class);
 
+    /**
+     * Add command. Add goods in basket
+     * @param req - HttpServletRequest
+     */
     @RequestMapping("/add")
     public void addToBasket(HttpServletRequest req) {
         try {
@@ -40,6 +47,10 @@ public class CommandController {
         }
     }
 
+    /**
+     * Sub command. Delete goods from basket
+     * @param req - HttpServletRequest
+     */
     @RequestMapping("/sub")
     public void deleteFromBasket(HttpServletRequest req) {
         int ordersId = Integer.parseInt(req.getParameter("id"));
@@ -47,6 +58,10 @@ public class CommandController {
         ordersService.delete(order);
     }
 
+    /**
+     * Buy command. Buy all goods in basket
+     * @param req - HttpServletRequest
+     */
     @RequestMapping("/buy")
     public String buyBasket(HttpServletRequest req) {
         List<Order> list = (List<Order>) req.getSession().getAttribute("ordersList");
@@ -63,6 +78,11 @@ public class CommandController {
         return "order";
     }
 
+    /**
+     * Change command. Change count of goods
+     * @param ordersId - order's index
+     * @param count - new count
+     */
     @RequestMapping("/change")
     public void changeAmount(@RequestParam("id") int ordersId,
                              @RequestParam("count") int count) {

@@ -13,6 +13,9 @@ import service.interfaces.GoodsServiceInterface;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Sale controller
+ */
 @Controller
 public class SaleController {
     private static Logger logger = Logger.getLogger(SaleController.class);
@@ -20,6 +23,11 @@ public class SaleController {
     @Autowired
     private GoodsServiceInterface goodsService;
 
+    /**
+     * Search and show all search goods
+     * @param index - page's index
+     * @return - link
+     */
     @RequestMapping("/sale")
     public String salePage(@RequestParam(value = "page", required = false) String index, Model model) {
         int page = 1;

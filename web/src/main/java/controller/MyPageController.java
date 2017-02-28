@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+/**
+ * My page controller
+ */
 @Controller
 public class MyPageController {
     @Autowired
@@ -22,6 +25,11 @@ public class MyPageController {
     private GoodsServiceInterface goodsService;
     private static Logger logger = Logger.getLogger(MyPageController.class);
 
+    /**
+     * Show my page with my orders
+     * @param req - HttpServletRequest
+     * @return - link
+     */
     @RequestMapping("/my")
     public String myPageShow(HttpServletRequest req) {
         //Search user in the session

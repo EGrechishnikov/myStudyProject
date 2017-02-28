@@ -11,16 +11,32 @@ import service.interfaces.UserServiceInterface;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * Edit profile controller.
+ */
 @Controller
 public class EditProfileController {
     @Autowired
     private UserServiceInterface userService;
 
+    /**
+     * Return link to edit profile page
+     * @return - link
+     */
     @RequestMapping("/linkToEdit")
     public String showEdit() {
         return "editProfile";
     }
 
+    /**
+     * Get new param and send them to bd.
+     * @param newLogin - new login
+     * @param newPassword - new password
+     * @param newEmail - new email
+     * @param newPhone - new phone
+     * @param req - HttpServletRequest
+     * @return - link
+     */
     @RequestMapping("/editProfile")
     public String editProfile(@RequestParam(value = "Login", required = false, defaultValue = "") String newLogin,
                               @RequestParam(value = "Password", required = false, defaultValue = "") String newPassword,

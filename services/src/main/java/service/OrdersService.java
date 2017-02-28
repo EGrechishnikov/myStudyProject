@@ -13,7 +13,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Service for orders. Singleton.
+ * Service for orders.
  */
 @Service("orderService")
 @Transactional

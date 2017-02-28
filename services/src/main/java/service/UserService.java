@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Service for users. Singleton.
+ * Service for users.
  */
 @Service("userService")
 @Transactional

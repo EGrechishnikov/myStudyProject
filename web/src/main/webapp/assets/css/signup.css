@@ -49,3 +49,15 @@ footer {
     font-size: 17px;
     text-align: center;
 }
+
+#langBar {
+    position: fixed;
+    margin-left: 623px;
+    margin-top: 22px;
+}
+
+img {
+    background-color: black;
+    padding: 1px;
+    margin-left: 3px;
+}

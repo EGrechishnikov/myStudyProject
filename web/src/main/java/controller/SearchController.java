@@ -12,12 +12,21 @@ import service.interfaces.GoodsServiceInterface;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Search controller
+ */
 @Controller
 public class SearchController {
     @Autowired
     private GoodsServiceInterface goodsService;
     static final int amount = Integer.parseInt(ResourceBundle.getBundle("config").getString("goodsPerPage"));
 
+    /**
+     * Do search and show it on JSP
+     * @param searchLine - search line
+     * @param index - page's index
+     * @return - link
+     */
     @RequestMapping("/search")
     public String searchPage(@RequestParam("search") String searchLine,
                              @RequestParam(value = "page", required = false) String index,

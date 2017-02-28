@@ -16,6 +16,9 @@ import service.interfaces.UserServiceInterface;
 
 import java.util.ResourceBundle;
 
+/**
+ * Sign up controller
+ */
 @Controller
 public class SignUpController {
     @Autowired
@@ -25,11 +28,23 @@ public class SignUpController {
     private static final Logger logger = Logger.getLogger(SignUpController.class);
     private static int roleId = Integer.parseInt(ResourceBundle.getBundle("config").getString("stdUserRole"));
 
+    /**
+     * Return link
+     * @return - link
+     */
     @RequestMapping(value = "/signUp", method = RequestMethod.GET)
     public String signUpPage() {
         return "signup";
     }
 
+    /**
+     * Sign up command
+     * @param login - login
+     * @param password - password
+     * @param email - email
+     * @param phone - phone
+     * @return - link
+     */
     @RequestMapping(value = "/signUp", method = RequestMethod.POST)
     public String signUp(@RequestParam(value = "Login", required = false, defaultValue = "") String login,
                           @RequestParam(value = "Password", required = false, defaultValue = "") String password,

@@ -14,17 +14,31 @@ import service.interfaces.UserServiceInterface;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * Login controller
+ */
 @Controller
 public class LoginController {
     @Autowired
     private UserServiceInterface userService;
     private static final Logger logger = Logger.getLogger(LoginController.class);
 
+    /**
+     * Return link to login page
+     * @return - link
+     */
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginPage() {
         return "login";
     }
 
+    /**
+     * Login command
+     * @param login - login
+     * @param password - password
+     * @param req - HttpServletRequest
+     * @return - link
+     */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String doLogin(@RequestParam("Login") String login,
                             @RequestParam("Password") String password,
