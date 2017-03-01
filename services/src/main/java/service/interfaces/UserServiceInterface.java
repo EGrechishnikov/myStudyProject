@@ -33,4 +33,14 @@ public interface UserServiceInterface extends BaseServiceInterface<User> {
      * @return true if exist
      */
     boolean isLoginExist(String login);
+
+    /**
+     * Update profile
+     * @param userId - old userId(not change)
+     * @param login - new login
+     * @param password - new password
+     * @param email - new email
+     * @param phone - new phone
+     */
+    void editProfile(int userId, String login, String password, String email, String phone);
 }

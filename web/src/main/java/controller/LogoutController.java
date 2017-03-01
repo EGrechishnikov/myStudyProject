@@ -5,7 +5,7 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  * Logout controller
@@ -16,15 +16,15 @@ public class LogoutController {
 
     /**
      * Do logout
-     * @param req - HttpServletRequest
+     * @param session - HttpSession
      * @return - link
      */
     @RequestMapping("/logout")
-    public String execute(HttpServletRequest req) {
-        User user = (User) req.getSession().getAttribute("user");
+    public String execute(HttpSession session) {
+        User user = (User) session.getAttribute("user");
         logger.info("logout: " + user.getLogin());
         //delete the session
-        req.getSession().invalidate();
+        session.invalidate();
         return "index";
     }
 }

@@ -2,10 +2,12 @@ package service;
 
 import bean.User;
 import dao.interfaces.UsersDAOInterface;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import service.interfaces.UserServiceInterface;
+import util.Hex;
 
 import java.io.Serializable;
 import java.util.List;
@@ -54,5 +56,30 @@ public class UserService implements UserServiceInterface {
 
     public boolean isLoginExist(String login) {
         return usersDAO.isLoginExist(login);
+    }
+
+    @Override
+    public void editProfile(int userId, String login, String password, String email, String phone) {
+        User user = usersDAO.get(userId);
+        if (!StringUtils.isEmpty(login)) {
+            if (login.matches(User.LOGIN_REGEX)) {
+                user.setLogin(login);
+            }
+        }
+        if (!StringUtils.isEmpty(password)) {
+            if (password.matches(User.PASSWORD_REGEX)) {
+                password = Hex.getHex(password + user.getSalt());
+                user.setPassword(password);
+            }
+        }
+        if (!StringUtils.isEmpty(email)) {
+            if (email.matches(User.EMAIL_REGEX)) {
+                user.setEmail(email);
+            }
+        }
+        if (!StringUtils.isEmpty(phone)) {
+            user.setPhone(phone);
+        }
+        saveOrUpdate(user);
     }
 }

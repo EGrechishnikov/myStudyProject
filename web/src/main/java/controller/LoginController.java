@@ -1,7 +1,7 @@
 package controller;
 
 import bean.User;
-import Util.Hex;
+import util.Hex;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,7 +66,7 @@ public class LoginController {
      *
      * @param login    - login
      * @param password - password
-     * @param req      - requset
+     * @param req      - request
      * @return - true if such user is exist
      */
     private boolean checkInDB(String login, String password, HttpServletRequest req) {

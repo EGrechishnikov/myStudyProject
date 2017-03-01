@@ -1,6 +1,6 @@
 package controller;
 
-import Util.Hex;
+import util.Hex;
 import bean.Role;
 import bean.User;
 import org.apache.commons.lang3.StringUtils;

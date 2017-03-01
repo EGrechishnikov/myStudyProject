@@ -39,8 +39,12 @@ public class Order implements Bean {
     @Column
     private String isPayed;
 
-    public Order(int amount, String isPayed) {
+    public Order(int amount) {
         this.amount = amount;
-        this.isPayed = isPayed;
+        this.isPayed = "n";
+    }
+
+    public void setIsPayed() {
+        this.isPayed = "y";
     }
 }

@@ -34,7 +34,7 @@ public class OrdersDAOTest {
 
     @Test
     public void saveGoods() {
-        Order order = new Order(2, "y");
+        Order order = new Order(2);
         User user = usersDAO.get(1);
         Goods goods = goodsDAO.get(1);
         order.setUser(user);
@@ -55,7 +55,7 @@ public class OrdersDAOTest {
 
     @Test
     public void deleteGoods() {
-        Order tmp = new Order(2, "y");
+        Order tmp = new Order(2);
         User user = usersDAO.get(1);
         Goods goods = goodsDAO.get(1);
         tmp.setUser(user);

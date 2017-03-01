@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import service.interfaces.GoodsServiceInterface;
 import service.interfaces.OrdersServiceInterface;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -27,13 +26,12 @@ public class MyPageController {
 
     /**
      * Show my page with my orders
-     * @param req - HttpServletRequest
+     * @param session - HttpSession
      * @return - link
      */
     @RequestMapping("/my")
-    public String myPageShow(HttpServletRequest req) {
+    public String myPageShow(HttpSession session) {
         //Search user in the session
-        HttpSession session = req.getSession(true);
         try {
             User user = (User) session.getAttribute("user");
             session.setAttribute("jsp_message", user.toString());

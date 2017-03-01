@@ -1,13 +1,14 @@
 package service;
 
+import bean.Goods;
 import bean.Order;
 import bean.User;
 import dao.interfaces.OrdersDAOInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import service.interfaces.GoodsServiceInterface;
 import service.interfaces.OrdersServiceInterface;
-import service.interfaces.UserServiceInterface;
 
 import java.io.Serializable;
 import java.util.List;
@@ -21,7 +22,7 @@ public class OrdersService implements OrdersServiceInterface {
     @Autowired
     private  OrdersDAOInterface ordersDAO;
     @Autowired
-    private  UserServiceInterface userService;
+    private GoodsServiceInterface goodsService;
 
     @Override
     public void saveOrUpdate(Order obj) {
@@ -39,6 +40,11 @@ public class OrdersService implements OrdersServiceInterface {
     }
 
     @Override
+    public void delete(int id) {
+        delete(get(id));
+    }
+
+    @Override
     public void delete(Order order) {
         ordersDAO.delete(order);
     }
@@ -50,5 +56,30 @@ public class OrdersService implements OrdersServiceInterface {
 
     public List<Order> getAllOldOrNewOrdersByUsersId(User user, boolean old) {
         return ordersDAO.getAllOldOrNewOrdersByUsersId(user, old);
+    }
+
+    @Override
+    public void addGoodsToBasket(int goodsId, User user) {
+        Goods goods = goodsService.get(goodsId);
+        Order order = new Order(0);
+        order.setGoods(goods);
+        order.setUser(user);
+        saveOrUpdate(order);
+    }
+
+    @Override
+    public void setIsPayed(List<Order> list) {
+        for(Order o : list) {
+            Order order = get(o.getId());
+            order.setIsPayed();
+            saveOrUpdate(order);
+        }
+    }
+
+    @Override
+    public void changeAmount(int ordersId, int count) {
+        Order order = get(ordersId);
+        order.setAmount(count);
+        saveOrUpdate(order);
     }
 }
