@@ -21,6 +21,4 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
     </bean>
 
     <tx:annotation-driven transaction-manager="txManager" proxy-target-class="true"/>
-
-
 </beans>

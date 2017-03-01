@@ -12,7 +12,7 @@ public class IndexController {
      * Return link to index page.
      * @return - link
      */
-    @RequestMapping("/index")
+    @RequestMapping({"/", "/index"})
     public String welcomePage() {
         return "index";
     }
