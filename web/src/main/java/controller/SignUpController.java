@@ -53,8 +53,6 @@ public class SignUpController {
                           Model model) {
         if (StringUtils.isEmpty(login) || StringUtils.isEmpty(password) ||
                 StringUtils.isEmpty(email) || StringUtils.isEmpty(phone)) {
-            //Clear the answer
-//            session.removeAttribute("answer");
             return "signup";
         }
         logger.info(String.format("Tries to sign up : %s : %s", login, email));

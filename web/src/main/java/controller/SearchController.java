@@ -41,11 +41,9 @@ public class SearchController {
         long allCount;
         if (StringUtils.isEmpty(searchLine)) {
             //if search is empty then show all catalog
-//            session.removeAttribute("result");
             List<Goods> catalog = goodsService.getAll(startIndex, amount);
             model.addAttribute("result", catalog);
             allCount = goodsService.getAllCount();
-//            session.removeAttribute("search");
 
         } else {
             List<Goods> result = goodsService.searchAll(searchLine, startIndex, amount);
