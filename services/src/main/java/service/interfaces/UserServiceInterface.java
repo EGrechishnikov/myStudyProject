@@ -43,4 +43,13 @@ public interface UserServiceInterface extends BaseServiceInterface<User> {
      * @param phone - new phone
      */
     void editProfile(int userId, String login, String password, String email, String phone);
+
+    /**
+     * SignUp user with parameter
+     * @param login - login
+     * @param password - password
+     * @param email - email
+     * @param phone - phone
+     */
+    void signUpUser(String login, String password, String email, String phone);
 }

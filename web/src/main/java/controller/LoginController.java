@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import service.interfaces.UserServiceInterface;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -36,28 +35,28 @@ public class LoginController {
      * Login command
      * @param login - login
      * @param password - password
-     * @param req - HttpServletRequest
+     * @param session - HttpSession
      * @return - link
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String doLogin(@RequestParam("Login") String login,
                             @RequestParam("Password") String password,
-                            HttpServletRequest req) {
+                            HttpSession session) {
         if (StringUtils.isEmpty(login) || StringUtils.isEmpty(password)) {
             //Clear the answer
-            req.getSession().removeAttribute("answer");
+            session.removeAttribute("answer");
             return "login";
         }
         logger.info(String.format("Tries to enter: %s", login));
         //check data with regex
         if (login.matches(User.LOGIN_REGEX) && password.matches(User.PASSWORD_REGEX)) {
             //if alright then go to main page
-            if (checkInDB(login, password, req)) {
+            if (checkInDB(login, password, session)) {
                 return "index";
             }
         }
         //else show the message
-        req.getSession().setAttribute("answer", "Логин или пароль неверны");
+        session.setAttribute("answer", "Логин или пароль неверны");
         return "login";
     }
 
@@ -66,10 +65,10 @@ public class LoginController {
      *
      * @param login    - login
      * @param password - password
-     * @param req      - request
+     * @param session  - HttpSession
      * @return - true if such user is exist
      */
-    private boolean checkInDB(String login, String password, HttpServletRequest req) {
+    private boolean checkInDB(String login, String password, HttpSession session) {
         User user = userService.get(login);
         if (user == null) {
             return false;
@@ -77,7 +76,6 @@ public class LoginController {
         password = Hex.getHex(password + user.getSalt());
         if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
             //if alright then create a session
-            HttpSession session = req.getSession(true);
             session.setAttribute("user", user);
             logger.info("Entered: " + user);
             return true;

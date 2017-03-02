@@ -1,7 +1,5 @@
 package controller;
 
-import util.Hex;
-import bean.Role;
 import bean.User;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
@@ -14,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import service.interfaces.RolesServiceInterface;
 import service.interfaces.UserServiceInterface;
 
-import java.util.ResourceBundle;
-
 /**
  * Sign up controller
  */
@@ -26,7 +22,6 @@ public class SignUpController {
     @Autowired
     private RolesServiceInterface rolesService;
     private static final Logger logger = Logger.getLogger(SignUpController.class);
-    private static int roleId = Integer.parseInt(ResourceBundle.getBundle("config").getString("stdUserRole"));
 
     /**
      * Return link
@@ -60,12 +55,7 @@ public class SignUpController {
         if (login.matches(User.LOGIN_REGEX) && password.matches(User.PASSWORD_REGEX) && email.matches(User.EMAIL_REGEX)) {
             if (!checkUserExist(login, email, model)) {
                 logger.info(String.format("Signed up: %s : %s", login, email));
-                String salt = Hex.getSalt();
-                password = Hex.getHex(password + salt);
-                User user = new User(login, password, email, phone, salt);
-                Role role = rolesService.get(roleId);
-                user.setRole(role);
-                userService.saveOrUpdate(user);
+                userService.signUpUser(login, password, email, phone);
                 return "login";
             }
         } else {
