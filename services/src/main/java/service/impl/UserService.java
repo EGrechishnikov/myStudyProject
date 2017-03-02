@@ -1,14 +1,14 @@
-package service;
+package service.impl;
 
 import bean.Role;
 import bean.User;
-import dao.interfaces.UsersDAOInterface;
+import dao.IUsersDAO;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import service.interfaces.RolesServiceInterface;
-import service.interfaces.UserServiceInterface;
+import service.IRolesService;
+import service.IUserService;
 import util.Hex;
 
 import java.io.Serializable;
@@ -20,11 +20,11 @@ import java.util.ResourceBundle;
  */
 @Service("userService")
 @Transactional
-public class UserService implements UserServiceInterface {
+public class UserService implements IUserService {
     @Autowired
-    private UsersDAOInterface usersDAO;
+    private IUsersDAO usersDAO;
     @Autowired
-    private RolesServiceInterface rolesService;
+    private IRolesService rolesService;
     private static int roleId = Integer.parseInt(ResourceBundle.getBundle("config").getString("stdUserRole"));
 
     @Override

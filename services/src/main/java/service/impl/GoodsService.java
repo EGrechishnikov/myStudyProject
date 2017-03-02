@@ -1,11 +1,11 @@
-package service;
+package service.impl;
 
 import bean.Goods;
-import dao.interfaces.GoodsDAOInterface;
+import dao.IGoodsDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import service.interfaces.GoodsServiceInterface;
+import service.IGoodsService;
 
 import java.io.Serializable;
 import java.util.List;
@@ -15,9 +15,9 @@ import java.util.List;
  */
 @Service("goodsService")
 @Transactional
-public class GoodsService implements GoodsServiceInterface {
+public class GoodsService implements IGoodsService {
     @Autowired
-    private GoodsDAOInterface goodsDAO;
+    private IGoodsDAO goodsDAO;
 
     @Override
     public void saveOrUpdate(Goods bean) {

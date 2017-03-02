@@ -9,8 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import service.interfaces.RolesServiceInterface;
-import service.interfaces.UserServiceInterface;
+import service.IUserService;
 
 /**
  * Sign up controller
@@ -18,9 +17,7 @@ import service.interfaces.UserServiceInterface;
 @Controller
 public class SignUpController {
     @Autowired
-    private UserServiceInterface userService;
-    @Autowired
-    private RolesServiceInterface rolesService;
+    private IUserService userService;
     private static final Logger logger = Logger.getLogger(SignUpController.class);
 
     /**

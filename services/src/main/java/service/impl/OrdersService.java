@@ -1,14 +1,14 @@
-package service;
+package service.impl;
 
 import bean.Goods;
 import bean.Order;
 import bean.User;
-import dao.interfaces.OrdersDAOInterface;
+import dao.IOrdersDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import service.interfaces.GoodsServiceInterface;
-import service.interfaces.OrdersServiceInterface;
+import service.IGoodsService;
+import service.IOrdersService;
 
 import java.io.Serializable;
 import java.util.List;
@@ -18,11 +18,11 @@ import java.util.List;
  */
 @Service("orderService")
 @Transactional
-public class OrdersService implements OrdersServiceInterface {
+public class OrdersService implements IOrdersService {
     @Autowired
-    private  OrdersDAOInterface ordersDAO;
+    private IOrdersDAO ordersDAO;
     @Autowired
-    private GoodsServiceInterface goodsService;
+    private IGoodsService goodsService;
 
     @Override
     public void saveOrUpdate(Order obj) {

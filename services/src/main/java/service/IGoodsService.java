@@ -1,10 +1,10 @@
-package service.interfaces;
+package service;
 
 import bean.Goods;
 
 import java.util.List;
 
-public interface GoodsServiceInterface extends BaseServiceInterface<Goods> {
+public interface IGoodsService extends IBaseService<Goods> {
     /**
      * Get goods for pagination
      *

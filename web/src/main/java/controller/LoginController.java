@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import service.interfaces.UserServiceInterface;
+import service.IUserService;
 
 import javax.servlet.http.HttpSession;
 
@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class LoginController {
     @Autowired
-    private UserServiceInterface userService;
+    private IUserService userService;
     private static final Logger logger = Logger.getLogger(LoginController.class);
 
     /**

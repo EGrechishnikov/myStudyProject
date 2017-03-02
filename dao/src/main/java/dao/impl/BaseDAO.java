@@ -1,7 +1,7 @@
-package dao;
+package dao.impl;
 
 import bean.Bean;
-import dao.interfaces.BaseDAOInterface;
+import dao.IBaseDAO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import java.lang.reflect.ParameterizedType;
  * @param <T> - type entity
  */
 @Repository
-public class BaseDAO<T extends Bean> implements BaseDAOInterface<T> {
+public class BaseDAO<T extends Bean> implements IBaseDAO<T> {
     private SessionFactory sessionFactory;
 
     @Autowired

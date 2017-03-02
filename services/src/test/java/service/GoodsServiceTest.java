@@ -8,7 +8,6 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
-import service.interfaces.GoodsServiceInterface;
 
 import java.util.List;
 
@@ -22,7 +21,7 @@ import static org.junit.Assert.assertNotNull;
 @Rollback(true)
 public class GoodsServiceTest {
     @Autowired
-    private GoodsServiceInterface serviceInterface;
+    private IGoodsService serviceInterface;
 
     @Test
     public void saveGoods() {

@@ -3,9 +3,6 @@ package dao;
 import bean.Goods;
 import bean.Order;
 import bean.User;
-import dao.interfaces.GoodsDAOInterface;
-import dao.interfaces.OrdersDAOInterface;
-import dao.interfaces.UsersDAOInterface;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,11 +23,11 @@ import static org.junit.Assert.assertNotNull;
 @Rollback(true)
 public class OrdersDAOTest {
     @Autowired
-    private OrdersDAOInterface ordersDAO;
+    private IOrdersDAO ordersDAO;
     @Autowired
-    private UsersDAOInterface usersDAO;
+    private IUsersDAO usersDAO;
     @Autowired
-    private GoodsDAOInterface goodsDAO;
+    private IGoodsDAO goodsDAO;
 
     @Test
     public void saveGoods() {

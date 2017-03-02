@@ -1,8 +1,8 @@
-package dao;
+package dao.impl;
 
 import bean.Order;
 import bean.User;
-import dao.interfaces.OrdersDAOInterface;
+import dao.IOrdersDAO;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -15,7 +15,7 @@ import java.util.List;
  * DAO for orders
  */
 @Repository
-public class OrdersDAO extends BaseDAO<Order> implements OrdersDAOInterface {
+public class OrdersDAO extends BaseDAO<Order> implements IOrdersDAO {
     @Autowired
     public OrdersDAO(SessionFactory sessionFactory) {
         super(sessionFactory);

@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import service.interfaces.UserServiceInterface;
+import service.IUserService;
 
 import javax.servlet.http.HttpSession;
 
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class EditProfileController {
     @Autowired
-    private UserServiceInterface userService;
+    private IUserService userService;
 
     /**
      * Return link to edit profile page

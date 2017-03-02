@@ -1,7 +1,7 @@
-package dao;
+package dao.impl;
 
 import bean.User;
-import dao.interfaces.UsersDAOInterface;
+import dao.IUsersDAO;
 import org.hibernate.*;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
  * DAO for users
  */
 @Repository
-public class UsersDAO extends BaseDAO<User> implements UsersDAOInterface {
+public class UsersDAO extends BaseDAO<User> implements IUsersDAO {
 
     @Autowired
     public UsersDAO(SessionFactory sessionFactory) {

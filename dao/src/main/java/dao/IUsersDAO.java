@@ -1,8 +1,8 @@
-package dao.interfaces;
+package dao;
 
 import bean.User;
 
-public interface UsersDAOInterface extends BaseDAOInterface<User> {
+public interface IUsersDAO extends IBaseDAO<User> {
     /**
      * get user from db by login
      *

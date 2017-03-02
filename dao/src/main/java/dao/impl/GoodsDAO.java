@@ -1,7 +1,7 @@
-package dao;
+package dao.impl;
 
 import bean.Goods;
-import dao.interfaces.GoodsDAOInterface;
+import dao.IGoodsDAO;
 import org.hibernate.*;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
@@ -14,7 +14,7 @@ import java.util.List;
  * DAO for goods
  */
 @Repository
-public class GoodsDAO extends BaseDAO<Goods> implements GoodsDAOInterface {
+public class GoodsDAO extends BaseDAO<Goods> implements IGoodsDAO {
     @Autowired
     public GoodsDAO(SessionFactory sessionFactory) {
         super(sessionFactory);

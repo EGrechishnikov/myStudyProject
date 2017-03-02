@@ -9,8 +9,6 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
-import service.interfaces.RolesServiceInterface;
-import service.interfaces.UserServiceInterface;
 
 import java.util.List;
 
@@ -24,9 +22,9 @@ import static org.junit.Assert.assertTrue;
 @Rollback(true)
 public class UsersServiceTest {
     @Autowired
-    private UserServiceInterface userService;
+    private IUserService userService;
     @Autowired
-    private RolesServiceInterface rolesService;
+    private IRolesService rolesService;
 
     @Test
     public void saveUser() {

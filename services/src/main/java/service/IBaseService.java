@@ -1,9 +1,9 @@
-package service.interfaces;
+package service;
 
 import java.io.Serializable;
 import java.util.List;
 
-public interface BaseServiceInterface<Type> {
+public interface IBaseService<Type> {
     /**
      * save bean or update
      *

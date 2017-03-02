@@ -21,7 +21,7 @@
             <props>
                 <prop key="url">jdbc:mysql://127.0.0.1:3306/GeneratedStore</prop>
                 <prop key="user">root</prop>
-                <prop key="password"></prop>
+                <prop key="password"/>
                 <prop key="useUnicode">true</prop>
                 <prop key="characterEncoding">UTF-8</prop>
             </props>

@@ -1,11 +1,11 @@
-package dao.interfaces;
+package dao;
 
 import org.hibernate.Session;
 
 import java.io.Serializable;
 import java.util.List;
 
-public interface BaseDAOInterface<Type> {
+public interface IBaseDAO<Type> {
     /**
      * save bean or update
      *

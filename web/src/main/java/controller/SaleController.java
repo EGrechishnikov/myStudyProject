@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import service.interfaces.GoodsServiceInterface;
+import service.IGoodsService;
 
 import java.util.List;
 import java.util.ResourceBundle;
@@ -21,7 +21,7 @@ public class SaleController {
     private static Logger logger = Logger.getLogger(SaleController.class);
     static final int amount = Integer.parseInt(ResourceBundle.getBundle("config").getString("goodsPerPage"));
     @Autowired
-    private GoodsServiceInterface goodsService;
+    private IGoodsService goodsService;
 
     /**
      * Search and show all search goods

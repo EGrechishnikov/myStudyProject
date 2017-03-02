@@ -1,7 +1,6 @@
 package dao;
 
 import bean.Role;
-import dao.interfaces.RolesDAOInterfaces;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,7 @@ import static org.junit.Assert.assertEquals;
 @Rollback(true)
 public class RolesDAOTest {
     @Autowired
-    private RolesDAOInterfaces rolesDAO;
+    private IRolesDAO rolesDAO;
 
     @Test
     public void saveRole() {

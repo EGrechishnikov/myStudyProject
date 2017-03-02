@@ -1,8 +1,8 @@
-package service.interfaces;
+package service;
 
 import bean.User;
 
-public interface UserServiceInterface extends BaseServiceInterface<User> {
+public interface IUserService extends IBaseService<User> {
     /**
      * Save or update user in db
      *

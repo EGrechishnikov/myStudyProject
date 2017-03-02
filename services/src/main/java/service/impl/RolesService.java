@@ -1,11 +1,11 @@
-package service;
+package service.impl;
 
 import bean.Role;
-import dao.interfaces.RolesDAOInterfaces;
+import dao.IRolesDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import service.interfaces.RolesServiceInterface;
+import service.IRolesService;
 
 import java.io.Serializable;
 import java.util.List;
@@ -15,10 +15,10 @@ import java.util.List;
  */
 @Service("roleService")
 @Transactional
-public class RolesService implements RolesServiceInterface {
+public class RolesService implements IRolesService {
 
     @Autowired
-    private  RolesDAOInterfaces rolesDAO;
+    private IRolesDAO rolesDAO;
 
     @Override
     public void saveOrUpdate(Role obj) {

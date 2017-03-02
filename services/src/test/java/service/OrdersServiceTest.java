@@ -10,9 +10,6 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
-import service.interfaces.GoodsServiceInterface;
-import service.interfaces.OrdersServiceInterface;
-import service.interfaces.UserServiceInterface;
 
 import java.util.List;
 
@@ -26,11 +23,11 @@ import static org.junit.Assert.assertNotNull;
 @Rollback(true)
 public class OrdersServiceTest {
     @Autowired
-    private OrdersServiceInterface orderService;
+    private IOrdersService orderService;
     @Autowired
-    private UserServiceInterface userService;
+    private IUserService userService;
     @Autowired
-    private GoodsServiceInterface goodsService;
+    private IGoodsService goodsService;
 
     @Test
     public void saveGoods() {

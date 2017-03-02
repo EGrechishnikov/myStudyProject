@@ -1,11 +1,11 @@
-package dao.interfaces;
+package dao;
 
 import bean.Order;
 import bean.User;
 
 import java.util.List;
 
-public interface OrdersDAOInterface extends BaseDAOInterface<Order> {
+public interface IOrdersDAO extends IBaseDAO<Order> {
     /**
      * Get all orders by users id. Old or new
      *

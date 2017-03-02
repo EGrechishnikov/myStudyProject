@@ -1,11 +1,11 @@
-package service.interfaces;
+package service;
 
 import bean.Order;
 import bean.User;
 
 import java.util.List;
 
-public interface OrdersServiceInterface extends BaseServiceInterface<Order> {
+public interface IOrdersService extends IBaseService<Order> {
     /**
      * Delete order by id
      * @param id - index

@@ -1,7 +1,6 @@
 package dao;
 
 import bean.Goods;
-import dao.interfaces.GoodsDAOInterface;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +21,7 @@ import static org.junit.Assert.assertNotNull;
 @Rollback(true)
 public class GoodsDAOTest {
     @Autowired
-    private GoodsDAOInterface goodsDAO;
+    private IGoodsDAO goodsDAO;
 
     @Test
     public void saveGoods() {

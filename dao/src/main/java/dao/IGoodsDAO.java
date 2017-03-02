@@ -1,10 +1,10 @@
-package dao.interfaces;
+package dao;
 
 import bean.Goods;
 
 import java.util.List;
 
-public interface GoodsDAOInterface extends BaseDAOInterface<Goods> {
+public interface IGoodsDAO extends IBaseDAO<Goods> {
     /**
      * Get all goods from db for pagination
      *

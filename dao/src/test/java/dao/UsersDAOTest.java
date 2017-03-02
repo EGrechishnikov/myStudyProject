@@ -2,8 +2,6 @@ package dao;
 
 import bean.Role;
 import bean.User;
-import dao.interfaces.RolesDAOInterfaces;
-import dao.interfaces.UsersDAOInterface;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +22,9 @@ import static org.junit.Assert.assertTrue;
 @Rollback(true)
 public class UsersDAOTest {
     @Autowired
-    private UsersDAOInterface usersDAO;
+    private IUsersDAO usersDAO;
     @Autowired
-    private RolesDAOInterfaces rolesDAO;
+    private IRolesDAO rolesDAO;
 
     @Test
     public void saveUser() {
