@@ -8,3 +8,4 @@ Stack of main technologies:
 - Spring;
 - Maven
 - HTML, CSS, JS(jQuery);
+- jUnit;
